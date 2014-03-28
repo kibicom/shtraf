@@ -1,0 +1,10 @@
+
+---
+hub_pages:
+  columns:
+  - id
+  - name
+  - path
+  - created_at
+  - updated_at
+  records: 
