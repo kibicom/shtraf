@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%= form_for(@customer) do |f| %>
   <% if @customer.errors.any? %>
     <div id="error_explanation">
@@ -30,7 +29,8 @@
     </div>
   <div class="actions">
     <%= f.submit %>
-=======
+    </div>
+<% end %>
 <%= form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
@@ -55,6 +55,5 @@
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 customers_path, :class => 'btn' %>
->>>>>>> vdev
   </div>
 <% end %>
