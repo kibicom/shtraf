@@ -1,0 +1,329 @@
+
+<div class="FineForm">
+<h2 >Проверка и оплата штрафов ГИБДД</h2>
+<!--p class="SpecialText" id="MotivationText">
+  Больше не нужно стоять в очередях, чтобы оплачивать штрафы в банке, а потом уведомлять ГИБДД об оплате.				</p>-->
+<p class="CallToAction">Введите данные об автомобиле</p>
+<div class="Reset"></div>
+
+<table class="CheckFinesForm">
+  <tbody><tr class="HintRow">
+    <td></td><td></td>
+    <td class="Hint" rowspan="9">
+      <div class="Paddings HintPlace">
+        <div class="RegionHint">
+          <div class="Flag" style="background-position: -22px -45px;"></div>
+          <p class="Name">Краснодарский край</p>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr class="AutoNumber2 auto_number">
+    <td class="FieldName">
+      <div class="Paddings">
+        <span class="Caption">Номер автомобиля</span>
+      </div>
+    </td>
+    <td class="FieldValue">
+      <div class="Paddings">
+        <div class="LicensePlate">
+
+          <input id="edit-auto-number" name="auto_number" type="text" class="Text Activable Hintable idleField" hintclass="SuperRegionHint" value="a123aa" default="a123aa">
+
+
+          <input id="edit-region" name="region" type="text" class="Text Activable RegionNumber Hintable ui-autocomplete-input" hintclass="SuperRegionHint" value="23" default="23" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+
+        </div>
+        <div class="auto_number Value ErrorToggle" style="display: none;">
+          <div class="Error">Заполните поле корректно</div>
+        </div>
+
+      </div>
+    </td>
+    <!--
+    <td class="RegionHint">
+        <div class="Paddings">
+        </div>
+    </td>
+     -->
+  </tr>
+
+  <tr class="DriverLicense2 driver_license requiredSign r22 r23 r24 r25 r26 r27 r28 r29 r30 r31 r32 r33 r34 r35 r36 r52 r37 r38 r06 r39 r69 r40 r41 r42 r43 r44 r63 r45 r46 r78 r47 r48 r49 r77 r50 r51 r53 r54 r55 r56 r57 r58 r59 r60 r61 r62 r64 r65 r66 r67 r68 r70 r71 r72 r73 r74 r75 r87 r76 r01 r02 r03 r05 r07 r04 r08 r10 r11 r12 r13 r15 r09 r17 r18 r19 r20 r21 r14 r79" style="display: table-row;">
+    <td class="FieldName">
+      <div class="Paddings">
+        <span class="Caption">Номер водительского удостоверения</span>
+      </div>
+    </td>
+    <td class="FieldValue">
+      <div class="Paddings">
+
+        <input id="edit-driver-license" name="driver_license" type="text" class="Text Activable Hintable idleField" hintclass="DriverLicenseHint" value="12AA123456" default="12AA123456">
+        <div class="driver_license Value ErrorToggle" style="display: none;">
+          <div class="Error">Заполните поле корректно</div>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+  <tr class="Registration2 registration requiredSign r16" style="display: none;">
+    <td class="FieldName">
+      <div class="Paddings">
+        <span class="Caption">Номер свидетельства о регистрации ТС</span>
+      </div>
+    </td>
+    <td class="FieldValue">
+      <div class="Paddings">
+
+        <input id="edit-registration" name="registration" type="text" class="Text Activable Hintable idleField" hintclass="RegistrationHint" value="123456" default="123456">
+        <div class="registration Value ErrorToggle" style="display: none;">
+          <div class="Error">Заполните поле корректно</div>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+  <tr class="RegistrationFull2 registration_full requiredSign r22 r23 r24 r25 r26 r27 r28 r29 r30 r31 r32 r33 r34 r35 r36 r52 r37 r38 r06 r39 r69 r40 r41 r42 r43 r44 r63 r45 r46 r78 r47 r48 r49 r77 r50 r51 r53 r54 r55 r56 r57 r58 r59 r60 r61 r62 r64 r65 r66 r67 r68 r70 r71 r72 r73 r74 r75 r87 r76 r01 r02 r03 r05 r07 r04 r08 r10 r11 r12 r13 r15 r09 r17 r18 r19 r20 r21 r14 r79" style="display: table-row;">
+    <td class="FieldName">
+      <div class="Paddings">
+        <span class="Caption">Номер свидетельства о регистрации ТС</span>
+      </div>
+    </td>
+    <td class="FieldValue">
+      <div class="Paddings">
+
+        <input id="edit-registration-full" name="registration_full" type="text" class="Text Activable Hintable idleField" hintclass="RegistrationFullHint" value="12АА123456" default="12АА123456">
+        <div class="registration_full Value ErrorToggle" style="display: none;">
+          <div class="Error">Заполните поле корректно</div>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+  <tr class="Subscribe2">
+    <td colspan="2">
+      <div class="Paddings">
+        <label for="edit-notification">
+          <input id="edit-notification" name="notification" type="checkbox" onchange="subscribeOnChange()">
+          Я хочу получать уведомления о новых штрафах							</label>
+      </div>
+    </td>
+  </tr>
+  <tr class="Subscribe2 SubscribeEmail2 ShowOnSubscribe email" style="display: none;">
+    <td class="FieldName">
+      <div class="Paddings">
+        <span class="Caption">По электронной почте</span><br><span class="SubCaption">(Это бесплатно)</span>
+      </div>
+    </td>
+    <td class="FieldValue">
+      <div class="Paddings">
+
+        <input id="edit-email" name="email" type="text" class="Text Activable Hintable idleField" hintclass="EmailHint" value="name@email.ru" default="name@email.ru">
+        <div class="email Value ErrorToggle" style="display: none;">
+          <div class="Error">Заполните поле корректно</div>
+        </div>
+
+
+      </div>
+    </td>
+
+  </tr>
+  <tr class="Check">
+    <td></td>
+    <td>
+      <div class="Paddings">
+        <div class="BlueButtonSized LargeFontSize" id="CheckFinesButton">
+          <a class="btn btn-primary">
+          <div class="Left"></div>
+            <div class="Center">
+              <div class="Paddings">
+                <span class="Text">&nbsp;Проверить штрафы&nbsp;</span>
+              </div>
+            </div>
+            <div class="Right"></div>
+          </a>
+					</div>
+    </td>
+  </tr>
+  </tbody></table>
+<div id="CheckNote">Вы сможете оплатить штрафы после проверки</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".RegionNumber").autocomplete({
+            source: [{label: '01 - Республика Адыгея', value: '01'},{label: '02 - Республика Башкортостан', value: '02'},{label: '102 - Республика Башкортостан', value: '102'},{label: '03 - Республика Бурятия', value: '03'},{label: '04 - Республика Алтай', value: '04'},{label: '05 - Республика Дагестан', value: '05'},{label: '06 - Республика Ингушетия', value: '06'},{label: '07 - Республика Кабардино-Балкария', value: '07'},{label: '08 - Республика Калмыкия', value: '08'},{label: '09 - Республика Карачаево-Черкессия', value: '09'},{label: '10 - Республика Карелия', value: '10'},{label: '11 - Республика Коми', value: '11'},{label: '12 - Республика Марий Эл', value: '12'},{label: '13 - Республика Мордовия', value: '13'},{label: '14 - Республика Саха /Якутия/', value: '14'},{label: '15 - Республика Северная Осетия (Алания)', value: '15'},{label: '16 - Республика Татарстан', value: '16'},{label: '116 - Республика Татарстан', value: '116'},{label: '17 - Республика Тыва', value: '17'},{label: '18 - Республика Удмуртия', value: '18'},{label: '19 - Республика Хакасия', value: '19'},{label: '20 - Республика Чечня', value: '20'},{label: '95 - Республика Чечня', value: '95'},{label: '21 - Республика Чувашия', value: '21'},{label: '22 - Алтайский край', value: '22'},{label: '23 - Краснодарский край', value: '23'},{label: '93 - Краснодарский край', value: '93'},{label: '123 - Краснодарский край', value: '123'},{label: '24 - Красноярский край', value: '24'},{label: '124 - Красноярский край', value: '124'},{label: '25 - Приморский край', value: '25'},{label: '125 - Приморский край', value: '125'},{label: '26 - Ставропольский край', value: '26'},{label: '27 - Хабаровский край', value: '27'},{label: '28 - Амурская область', value: '28'},{label: '29 - Архангельская область', value: '29'},{label: '83 - Архангельская область', value: '83'},{label: '30 - Астраханская область', value: '30'},{label: '31 - Белгородская область', value: '31'},{label: '32 - Брянская область', value: '32'},{label: '33 - Владимирская область', value: '33'},{label: '34 - Волгоградская область', value: '34'},{label: '35 - Вологодская область', value: '35'},{label: '36 - Воронежская область', value: '36'},{label: '37 - Ивановская область', value: '37'},{label: '38 - Иркутская область', value: '38'},{label: '39 - Калининградская область', value: '39'},{label: '40 - Калужская область', value: '40'},{label: '41 - Камчатский край', value: '41'},{label: '42 - Кемеровская область', value: '42'},{label: '142 - Кемеровская область', value: '142'},{label: '43 - Кировская область', value: '43'},{label: '44 - Костромская область', value: '44'},{label: '45 - Курганская область', value: '45'},{label: '46 - Курская область', value: '46'},{label: '47 - Ленинградская область', value: '47'},{label: '48 - Липецкая область', value: '48'},{label: '49 - Магаданская область', value: '49'},{label: '50 - Московская область', value: '50'},{label: '90 - Московская область', value: '90'},{label: '150 - Московская область', value: '150'},{label: '190 - Московская область', value: '190'},{label: '750 - Московская область', value: '750'},{label: '51 - Мурманская область', value: '51'},{label: '52 - Нижегородская область', value: '52'},{label: '152 - Нижегородская область', value: '152'},{label: '53 - Новгородская область', value: '53'},{label: '54 - Новосибирская область', value: '54'},{label: '154 - Новосибирская область', value: '154'},{label: '55 - Омская область', value: '55'},{label: '56 - Оренбургская область', value: '56'},{label: '57 - Орловская область', value: '57'},{label: '58 - Пензенская область', value: '58'},{label: '59 - Пермский край', value: '59'},{label: '159 - Пермский край', value: '159'},{label: '60 - Псковская область', value: '60'},{label: '61 - Ростовская область', value: '61'},{label: '161 - Ростовская область', value: '161'},{label: '62 - Рязанская область', value: '62'},{label: '63 - Самарская область', value: '63'},{label: '163 - Самарская область', value: '163'},{label: '64 - Саратовская область', value: '64'},{label: '65 - Сахалинская область', value: '65'},{label: '66 - Свердловская область', value: '66'},{label: '96 - Свердловская область', value: '96'},{label: '196 - Свердловская область', value: '196'},{label: '67 - Смоленская область', value: '67'},{label: '68 - Тамбовская область', value: '68'},{label: '69 - Тверская область', value: '69'},{label: '70 - Томская область', value: '70'},{label: '71 - Тульская область', value: '71'},{label: '72 - Тюменская область', value: '72'},{label: '86 - Тюменская область', value: '86'},{label: '89 - Тюменская область', value: '89'},{label: '186 - Тюменская область', value: '186'},{label: '73 - Ульяновская область', value: '73'},{label: '74 - Челябинская область', value: '74'},{label: '174 - Челябинская область', value: '174'},{label: '75 - Забайкальский край', value: '75'},{label: '76 - Ярославская область', value: '76'},{label: '77 - Москва', value: '77'},{label: '97 - Москва', value: '97'},{label: '99 - Москва', value: '99'},{label: '177 - Москва', value: '177'},{label: '199 - Москва', value: '199'},{label: '197 - Москва', value: '197'},{label: '777 - Москва', value: '777'},{label: '78 - Санкт-Петербург', value: '78'},{label: '98 - Санкт-Петербург', value: '98'},{label: '178 - Санкт-Петербург', value: '178'},{label: '79 - Еврейская Автономная область', value: '79'},{label: '87 - Чукотский Автономный округ', value: '87'}],
+            minLength: 2,
+            select: function(event, ui) {
+                changeRegion2(ui.item);
+            }
+            //				change: function(event, ui) {
+            //					changeRegion2(ui.item);
+            //				}
+        });
+    });
+    $(".RegionNumber").blur(function() {
+        changeRegion2();
+    });
+    $(".Activable").focus(function() {
+        $('.Activable').each(function() {
+            $(this).closest('tr').removeClass('Active');
+        });
+        $(this).closest('tr').addClass('Active');
+    });
+    $(".Activable").focusout(function() {
+        $(this).closest('tr').removeClass('Active');
+    });
+    $(".Hintable").focus(function() {
+        var hint = $('table.CheckFinesForm tr.HintRow td.Hint .HintPlace');
+        var t =  $(this);
+        var tr = t.closest('tr');
+        hint.css('margin-top', 0);
+        $(".Hintable").each(function() {
+            if ($(this) != t) {
+                hint.removeClass($(this).attr('hintClass'));
+            }
+        });
+        hint.addClass(t.attr('hintClass'));
+        var hintParentTop = hint.parent().offset().top;
+        var hintHeight = hint.outerHeight();
+        var y = tr.offset().top + tr.height() / 2 - hintHeight / 2;
+        y = Math.min(y, $('table.CheckFinesForm tr.Check').offset().top - hintHeight);
+        y = Math.max(y, hintParentTop);
+        y -=  hintParentTop;
+        hint.css('margin-top', y);
+    });
+    $(".Hintable").focusout(function() {
+        $('table.CheckFinesForm tr.HintRow td.Hint .HintPlace').removeClass($(this).attr('hintClass'));
+    });
+    //хак, для фикса глюка с событием onchange в браузерах ie
+    if ($.browser.msie) {
+        $(function() {$('input:radio, input:checkbox').click(function() { this.blur(); this.focus(); }); });
+    }
+    function subscribeOnChange() {
+        if ($('#edit-notification').is(':checked')) {
+            $('.ShowOnSubscribe').show();
+        } else {
+            $('.ShowOnSubscribe').hide();
+        }
+        resizeWindow();
+    }
+    subscribeOnChange();
+    changeRegion2();
+</script>
+<script type="text/javascript">
+    function submitform() {
+        $("#wait-modal-content .Loading").show();
+        $("#wait-modal-content .SeeFines").hide();
+        $("#wait-modal-content").modal({close: false});
+        if (!$("#edit-auto-number").is(":visible")) {
+            $("#edit-auto-number").val("a123aa");
+        }
+        if (!$("#edit-driver-license").is(":visible")) {
+            $("#edit-driver-license").val("12AA123456");
+        }
+        if (!$("#edit-registration").is(":visible")) {
+            $("#edit-registration").val("123456");
+        }
+        if (!$("#edit-registration-full").is(":visible")) {
+            $("#edit-registration-full").val("12АА123456");
+        }
+        $.post($('#check-fines-form').attr('action'),
+                $('#check-fines-form').serialize(),
+                submitCallback);
+        //$('#check-fines-form').submit();
+        _gaTrackFormSubmitEvent(
+                'submit',
+                $("#edit-region").val() + '_' +
+                        $("#edit-auto-number").val(),
+                0
+        );
+
+        if ($("#edit-notification").is(':checked')) {
+            if ($("#edit-email").val() != 'name@email.ru') {
+                _gaTrackFormSubmitEvent('submit with email', $("#edit-email").val(), 0);
+            }
+            if ($("#edit-phone").val() != '7 (912) 123-45-67') {
+                _gaTrackFormSubmitEvent('submit with phone', $("#edit-phone").val(), 0);
+            }
+        }
+        submitFormTimeTracker = new TimeTracker();
+        submitFormTimeTracker._setHistogramBuckets([500, 1000, 2000, 5000, 10000, 20000, 35000, 60000]);
+        submitFormTimeTracker._recordStartTime();
+        return false;
+    }
+    function submitCallback(d) {
+        try {
+            submitFormTimeTracker._recordEndTime();
+            _gaTrackFormSubmitEvent(
+                    'callback',
+                    $("#edit-region").val() + '_' +
+                            $("#edit-auto-number").val() + ': ' + d
+            );
+        } catch (err) {
+        }
+        try {
+            //clearTimeout(showJokeTimeoutId);
+            var data = eval('(' + d + ')');
+            if (data.message != undefined) {
+                $("#wait-modal-content .SeeFines .msg").html(data.message);
+            }
+            $('#WaitModalButton a').unbind('click');
+            if (data.href != undefined) {
+                $("#WaitModalButton a").attr('href', data.href);
+            } else {
+                $("#WaitModalButton a").click(function() {
+                    $.modal.close();
+                    return false;
+                });
+            }
+            if (data.redirect != undefined) {
+                _gaTrackFormSubmitEvent('callback with redirect', data.redirect);
+                window.location.replace(data.redirect);
+                return;
+            }
+            if (data.errors != undefined) {
+                $(".ErrorToggle").hide();
+                for (var key in data.errors) {
+                    $("." + key + " .ErrorToggle").show();
+                }
+                _gaTrackFormSubmitEvent('callback with error', data.errors);
+                $.modal.close();
+            } else {
+                _gaTrackFormSubmitEvent('callback success', '');
+            }
+            if (data.button != undefined) {
+                $('#WaitModalButton a .Text').html(data.button);
+            } else {
+                $('#WaitModalButton a .Text').html('Смотреть штрафы');
+            }
+        } catch (err) {
+            $("#wait-modal-content .SeeFines .msg").html('<h4>Случилась непредвиденная ошибка</h4>');
+            $('#WaitModalButton a .Text').html('Назад');
+            $("#WaitModalButton a").click(function() {
+                $.modal.close();
+                return false;
+            });
+            _gaTrackFormSubmitEvent('callback with exception', err);
+        }
+        $("#wait-modal-content .Loading").hide();
+        $("#wait-modal-content .SeeFines").show();
+        resizeWindow();
+    }
+
+    function _gaTrackFormSubmitEvent(action, opt_label, opt_value) {
+        if (typeof opt_value == 'undefined') {
+            opt_value = submitFormTimeTracker._getTimeDiff();
+        }
+        _gaq.push([
+            '_trackEvent',
+            'Check fines - Form submit',
+            action,
+            opt_label,
+            opt_value
+        ]);
+    }
+</script>
+<input type="hidden" name="form_id" id="edit-check-fines-form" value="check_fines_form">
+<input type="hidden" name="form_build_id" id="form-47defe639949a591ed6e1f75149677e5" value="form-47defe639949a591ed6e1f75149677e5">
+
+</div>

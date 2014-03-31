@@ -1,0 +1,22 @@
+<% unless Hub.where(path: params[:hub_path]).empty? %>
+  <div class="span2">
+    <div class="sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Разделы</li>
+        <ul class="nav nav-pills nav-stacked">
+          <% unless hub_pages.nil? %>
+            <% hub_pages.each do |hub_page| %>
+              <li class="<%= 'active' if "/"+params[:controller] == hub_page.path %>">
+                <%= link_to hub_page.name, action: 'index', controller: hub_page.path %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </ul>
+    </div><!--/.well -->
+  </div><!--/span-->
+<% end %>
+
+
+
+`

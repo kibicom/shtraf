@@ -1,0 +1,214 @@
+@CHARSET "UTF-8";
+				#MainContent .FineForm {
+					margin: 0 0 15px;
+					padding: 0;
+					width: 100%;					
+				}
+				#MainContent .Borders .BL {
+					padding: 15px 25px;
+				}
+				p.CallToAction {
+					font-size: 15px;
+					padding-top: 10px;
+					font-weight: bold;
+				}
+				table.CheckFinesForm {
+				    margin: 15px 0;
+				    width:100%;
+				}
+				.Caption {
+				    font-size: 14px
+				}
+				table.CheckFinesForm td {
+					padding: 0;
+				}
+				table.CheckFinesForm td .Paddings {
+				    padding: 12px 8px;
+				}
+				table.CheckFinesForm td.FieldName {
+				    width: 156px;
+				}
+				table.CheckFinesForm td.FieldName .Paddings {
+				    padding-right: 0px;
+				}
+				table.CheckFinesForm td.FieldValue {
+				    width: 185px;
+				}
+				table.CheckFinesForm td.Hint {
+					width: 185px;					
+					vertical-align: top;
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .HintPlace {
+					display: none;
+					border: 10px solid #f6efcc;	
+					padding: 0;		
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.DriverLicenseHint {
+					display: block;
+				    width: 160px;
+				    height: 100px;
+					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -129px 0 transparent;
+					margin-top: 25px;					
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.RegistrationHint {
+					display: block;
+				    width: 128px;
+				    height: 180px;
+					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll 0 0 transparent;
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.RegistrationFullHint {
+					display: block;
+				    width: 128px;
+				    height: 180px;
+					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -308px 0 transparent;
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.SuperRegionHint {
+					display: block;
+					border: 0;					
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .SuperRegionHint .RegionHint {
+					display: block;
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .RegionHint {
+					vertical-align: middle;
+					background-color: #F6EFCC;
+					display: none;
+					height: 68px;
+				}
+				table.CheckFinesForm tr.HintRow td.Hint .RegionHint .Flag {
+					background: url(/sites/all/themes/gibdd/images/region_flags_min.png) -22px -30px; 
+					width: 22px; 
+					height: 15px; 
+					border: 0; 
+					float: left;
+					display: block;
+					margin-top: 25px;
+				}
+				#MainContent table.CheckFinesForm tr.HintRow td.Hint .RegionHint .Name {
+					padding-left: 25px; 
+					font-weight: bold;
+					display: block;
+					padding-top: 25px;
+					margin: 0;
+				}
+
+				table.CheckFinesForm tr.Active td {
+					background-color: #f6efcc;					
+				}
+				input.Text {
+				    border-color: #AAADB2 #DCDFE6 #E2E9EF #E3E3EB;
+				    border-style: solid;
+				    border-width: 1px;
+				    font-size: 23px;
+				    padding: 3px 7px;				    
+				}
+				.Region2 input.Text {
+				    width: 45px
+				}
+				.AutoNumber2 .LicensePlate {
+					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -129px -101px transparent;
+				    height: 44px;
+				    padding: 0 0 0 7px;
+				    width: 172px;
+				    z-index: 10;
+				}
+				.AutoNumber2 input.Text {
+				    border: 1px solid #FFFFFF;
+				    float: left;
+				    margin: 7px 0 0;
+				    padding: 0 2px;
+				    width: 90px;
+				}
+				.AutoNumber2 .RegionNumber.Text {
+					width: 42px;
+					margin-left: 14px;				
+				}
+				.AutoNumber2 .AutoRegion {
+				    color: #000000;
+				    float: left;
+				    font-size: 21px;
+				    font-weight: bold;
+				    padding: 2px 0 0 9px;
+				    text-align: center;
+				    width: 47px;
+				    z-index: 10;
+				}
+				.BirthDate2 .Height {
+					height: 30px;
+				}
+				.BirthDate2 .form-item {
+				    border-color: #AAADB2 #DCDFE6 #E2E9EF #E3E3EB;
+				    border-style: solid;
+				    border-width: 1px;
+				    float: left;
+				    margin: 0;
+				    padding: 3px;
+				}
+				.BirthDate2 .form-select {
+					border: 0;
+					float: none;
+					margin: 0;
+					padding: 0;
+				}							
+				.DriverLicense2 input.Text {
+					width: 143px;
+				}
+				.Registration2 input.Text {
+					width: 88px;
+				}
+				.RegistrationFull2 input.Text {
+					width: 143px;
+				}
+				.SubscribeEmail2 input.Text {
+					width: 173px;
+					font-size: 15px;
+				}
+				.Check .BlueButtonLong {
+					margin-top: 0px;
+					float: left;
+				}
+				#CheckNote {
+					margin: 0 0 0 75px;
+    				text-align: center;
+    				width: 375px;
+				}
+				#MainContent .Error {
+    				background: url("/sites/all/themes/gibdd/images/error.png") no-repeat scroll 0 0 transparent;
+    				margin: 3px 0 4px;
+    			}
+				.ui-autocomplete { position: absolute; cursor: default; }
+				.ui-menu {
+					border: 1px solid #D2D2D2;
+					background-color: #FFF;
+					list-style:none;
+					margin: 0;
+					display:block;
+					float: left;
+				}
+				.ui-menu .ui-menu {
+					margin-top: -3px;
+				}
+				.ui-menu .ui-menu-item {
+					margin:0;
+					padding: 0;
+					zoom: 1;
+					float: left;
+					clear: left;
+					width: 100%;
+				}
+				.ui-menu .ui-menu-item a {
+					text-decoration:none;
+					display:block;
+					padding:.4em .5em;
+					line-height:1.5;
+					zoom:1;
+					color: #444444;
+				}
+				.ui-menu .ui-menu-item a.ui-state-hover,
+				.ui-menu .ui-menu-item a.ui-state-active {
+					background: url("/sites/all/themes/gibdd/images/select_active_bg.gif") repeat-x scroll 0 0 transparent;
+    				border-left: medium none #305D84;
+    				border-right: medium none #305D84;
+    				color: #FFFFFF;    				
+					font-weight: normal;
+				}			

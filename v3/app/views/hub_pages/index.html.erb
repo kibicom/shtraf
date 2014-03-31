@@ -1,0 +1,66 @@
+<%- model_class = HubPage -%>
+<div class="page-header" style="display: none">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-lg">
+          <%= link_to "",
+                      new_hub_page_path,
+                      :class => 'glyphicon glyphicon-plus' %>
+        </button>
+        <button type="button" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+        <button type="button" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:path) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @hub_pages.each do |hub_page| %>
+      <tr>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-mini btn-lg">
+                <%= link_to "", edit_hub_page_path(hub_page), :class => 'glyphicon glyphicon-pencil' %>
+            </button>
+            <button type="button" class="btn btn-mini btn-lg">
+                <%= link_to "",
+                            hub_page_path(hub_page),
+                            :method => :delete,
+                            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                            :class => 'glyphicon glyphicon-remove' %>
+
+            </button>
+          </div>
+
+        </td>
+        <td><%= link_to hub_page.id, hub_page_path(hub_page) %></td>
+        <td><%= link_to hub_page.name, hub_page_path(hub_page) %></td>
+        <td><%= hub_page.path %></td>
+        <td><%=l hub_page.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_hub_page_path,
+            :class => 'btn btn-primary' %>
