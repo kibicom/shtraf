@@ -1,0 +1,37 @@
+<table class="table">
+  <caption>Штрафы!</caption>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>SUM</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%@json.each do |json|%>
+      <tr>
+        <td><%= json["id"] %></td>
+        <td><%= json["name"] %></td>
+        <td><%= json["sum"] %></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
+
+<table class="table">
+  <caption>Штрафы!</caption>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>SUM</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @name%></td>
+    <td><%= @phone %></td>
+    <td><%= @cust %></td>
+  </tr>
+  </tbody>
+</table>
