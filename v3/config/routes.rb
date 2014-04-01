@@ -2,6 +2,7 @@ EffectiveSales::Application.routes.draw do
 
 
 
+  get "wako/yako"
   get "request_fine/getFine"
   #root
   root :to => redirect('/PAY/fine/index')

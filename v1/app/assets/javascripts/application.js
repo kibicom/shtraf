@@ -12,10 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
-=======
 //= require twitter/bootstrap
 // require twitter/bootstrap
->>>>>>> vdev
 //= require turbolinks
 //= require_tree .
