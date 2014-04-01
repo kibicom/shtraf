@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-hover">
   <caption>Штрафы!</caption>
   <thead>
   <tr>
@@ -10,7 +10,7 @@
   <tbody>
   <%@json.each do |json|%>
       <tr class="fines">
-        <td><%= json["id"] %></td>
+        <td><input type="checkbox" disabled="disabled"><%= json["id"] %></td>
         <td><%= json["name"] %></td>
         <td><%= json["sum"] %></td>
       </tr>
