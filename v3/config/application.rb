@@ -20,6 +20,7 @@ module EffectiveSales
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :ru
+    config.secret_key_base = '1daa91f99b10567d84e1febd5bbdb90eb09597872974e0e4d8b43e5a4184e19baabfd69b352188b99e17237602b8fd54986dbbad380b92e6aa9b3a602e46a243'
   end
 end
 
