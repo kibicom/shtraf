@@ -43,3 +43,8 @@
             new_customer_path,
             :class => 'btn btn-primary' %>
 
+<%= link_to t('.requestPenalties', :default => t("helpers.links.getFine")),
+            finerequest_requestPenalties_path(:param1 => "test", :param2=> "@customer.phone", :param3=>@customers),
+            :class => 'btn btn-primary' %>
+
+<%= button_to 'My link', finerequest_requestPenalties_path(:param1 => "test", :param2=> "@customer.phone", :param3=>@customers)%>

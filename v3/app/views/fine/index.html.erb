@@ -132,36 +132,22 @@
     <td>
       <div class="Paddings">
         <div class="BlueButtonSized LargeFontSize" id="CheckFinesButton">
-          <a class="btn btn-primary">
-          <div class="Left"></div>
-            <div class="Center">
-              <div class="Paddings">
-                <span class="Text">&nbsp;Проверить штрафы&nbsp;</span>
-              </div>
-            </div>
-            <div class="Right"></div>
-          </a>
-					</div>
+          <%= link_to t('.requestPenalties', :default => t("helpers.links.getFine")),
+                      request_fine_getFine_path(:param1 => "test", :param2=> "23", :param3=>"lol"),
+                      :class => 'btn btn-primary' %>
+		</div>
         <script language='javascript' type='text/javascript'
                 src='https://auth.robokassa.ru/Merchant/PaymentForm/FormV.js?
-MrchLogin=demo&
-OutSum=10.96&
-InvId=0&
-Desc=ROBOKASSA+Advanced+User+Guide&
-Shp_code=Asp&
-Shp_item=&
-SignatureValue=1c980c5b65d4e60b0f395ea2ddf6ed16&
-Culture=ru&
-Encoding=utf-8'></script>
+        MrchLogin=demo&
+        OutSum=10.96&
+        InvId=0&
+        Desc=ROBOKASSA+Advanced+User+Guide&
+        Shp_code=Asp&
+        Shp_item=&
+        SignatureValue=1c980c5b65d4e60b0f395ea2ddf6ed16&
+        Culture=ru&
+        Encoding=utf-8'></script>
           <%=pay_url "Rubykassa","1000",1000%>
-
-
-
-
-
-
-
-
     </td>
   </tr>
   </tbody></table>
