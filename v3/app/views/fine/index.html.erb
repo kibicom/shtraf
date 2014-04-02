@@ -1,4 +1,193 @@
 
+
+
+<script type="text/javascript">
+    function setDefault() {
+        if ($(this).hasClass('RegionNumber')) {
+            return;
+        }
+        if (($(this).val() == '') || ($(this).val() == $(this).attr('default'))) {
+            $(this).addClass("idleField");
+            $(this).val($(this).attr('default'));
+        }
+    }
+    $(document).ready(function() {
+        $(".FieldValue input.Text, .Subscribe input").focus(function() {
+            if ($(this).hasClass('RegionNumber')) {
+                return;
+            }
+            if ($(this).val() == $(this).attr('default')) {
+                $(this).val('');
+            }
+            $(this).removeClass("idleField");
+        });
+        $(".FieldValue input.Text, .Subscribe input").blur(setDefault);
+        $(".FieldValue input.Text, .Subscribe input").each(setDefault);
+    });
+</script>
+
+<script type="text/javascript">
+    var regionsInfo = {
+        22:{codes: [22], name: "Алтайский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 23:{codes: [23,93,123], name: "Краснодарский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 24:{codes: [24,124], name: "Красноярский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 25:{codes: [25,125], name: "Приморский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 26:{codes: [26], name: "Ставропольский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 27:{codes: [27], name: "Хабаровский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 28:{codes: [28], name: "Амурская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 29:{codes: [29,83], name: "Архангельская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 30:{codes: [30], name: "Астраханская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 31:{codes: [31], name: "Белгородская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 32:{codes: [32], name: "Брянская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 33:{codes: [33], name: "Владимирская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 34:{codes: [34], name: "Волгоградская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 35:{codes: [35], name: "Вологодская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 36:{codes: [36], name: "Воронежская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 52:{codes: [52,152], name: "Нижегородская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 37:{codes: [37], name: "Ивановская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 38:{codes: [38], name: "Иркутская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 06:{codes: [06], name: "Республика Ингушетия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 39:{codes: [39], name: "Калининградская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 69:{codes: [69], name: "Тверская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 40:{codes: [40], name: "Калужская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 41:{codes: [41], name: "Камчатский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 42:{codes: [42,142], name: "Кемеровская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 43:{codes: [43], name: "Кировская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 44:{codes: [44], name: "Костромская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 63:{codes: [63,163], name: "Самарская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 45:{codes: [45], name: "Курганская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 46:{codes: [46], name: "Курская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 78:{codes: [78,98,178], name: "Санкт-Петербург", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 47:{codes: [47], name: "Ленинградская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 48:{codes: [48], name: "Липецкая область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 49:{codes: [49], name: "Магаданская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 77:{codes: [77,97,99,177,199,197,777], name: "Москва", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 50:{codes: [50,90,150,190,750], name: "Московская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 51:{codes: [51], name: "Мурманская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 53:{codes: [53], name: "Новгородская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 54:{codes: [54,154], name: "Новосибирская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 55:{codes: [55], name: "Омская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 56:{codes: [56], name: "Оренбургская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 57:{codes: [57], name: "Орловская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 58:{codes: [58], name: "Пензенская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 59:{codes: [59,159], name: "Пермский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 60:{codes: [60], name: "Псковская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 61:{codes: [61,161], name: "Ростовская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 62:{codes: [62], name: "Рязанская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 64:{codes: [64], name: "Саратовская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 65:{codes: [65], name: "Сахалинская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 66:{codes: [66,96,196], name: "Свердловская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 67:{codes: [67], name: "Смоленская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 68:{codes: [68], name: "Тамбовская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 70:{codes: [70], name: "Томская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 71:{codes: [71], name: "Тульская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 72:{codes: [72,86,89,186], name: "Тюменская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 73:{codes: [73], name: "Ульяновская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 74:{codes: [74,174], name: "Челябинская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 75:{codes: [75], name: "Забайкальский край", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 87:{codes: [87], name: "Чукотский Автономный округ", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 76:{codes: [76], name: "Ярославская область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 01:{codes: [01], name: "Республика Адыгея", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 02:{codes: [02,102], name: "Республика Башкортостан", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 03:{codes: [03], name: "Республика Бурятия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 05:{codes: [05], name: "Республика Дагестан", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 07:{codes: [07], name: "Республика Кабардино-Балкария", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 04:{codes: [04], name: "Республика Алтай", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 08:{codes: [08], name: "Республика Калмыкия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 10:{codes: [10], name: "Республика Карелия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 11:{codes: [11], name: "Республика Коми", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 12:{codes: [12], name: "Республика Марий Эл", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 13:{codes: [13], name: "Республика Мордовия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 15:{codes: [15], name: "Республика Северная Осетия (Алания)", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 09:{codes: [09], name: "Республика Карачаево-Черкессия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 16:{codes: [16,116], name: "Республика Татарстан", methods: ["getFines","payFine","subscribe"]}, 17:{codes: [17], name: "Республика Тыва", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 18:{codes: [18], name: "Республика Удмуртия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 19:{codes: [19], name: "Республика Хакасия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 20:{codes: [20,95], name: "Республика Чечня", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 21:{codes: [21], name: "Республика Чувашия", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 14:{codes: [14], name: "Республика Саха /Якутия/", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}, 79:{codes: [79], name: "Еврейская Автономная область", methods: ["checkBeforePayment","getFines","subscribe","payFine"]}	};
+    function getRegionCode(region) {
+        var code = -1;
+        for (r in regionsInfo) {
+            for (i = 0; i < regionsInfo[r].codes.length; i++) {
+                if (region == regionsInfo[r].codes[i]) {
+                    code = parseInt(r, 10);
+                }
+            }
+        }
+        return code;
+    }
+    function showRequiredFields() {
+        $(".requiredSign").hide();
+        $(".BirthDate").hide();
+        $(".rAll").show();
+        var r = $("#edit-region").val();
+        var code = getRegionCode(r);
+        $(".r" + pad(code,2)).show();
+        //$(".r" + code).show();
+    }
+    currentRegion = {code: 16, name: 'Республика Татарстан'};
+    function changeRegion2(aRegion) {
+        var reg = $.trim($(".RegionNumber").val());
+        if (aRegion != undefined) {
+            reg = aRegion.value;
+        }
+        var region = parseInt(reg, 10);
+        if (isNaN(region) || !isFinite(region) || (region > 999)) {
+            reg = $(".RegionNumber").attr('default');
+            $(".RegionNumber").val(reg);
+            region = parseInt(reg, 10);
+        }
+        //определяем первичный код региона
+        var code = getRegionCode(region);
+        var isRegionOutOfService = false;;
+        if (code != -1) {
+            //определяем координаты флага региона
+            var position = {x: -1, y: -1};
+            var positionCode = code;
+            if (code >= 30) { positionCode += 6; }
+            if (code >= 40) { positionCode += 6; }
+            if (code >= 51) { positionCode += 1; }
+            if (code >= 54) { positionCode += 5; }
+            if (code >= 69) { positionCode += 6; }
+            if (code >= 79) { positionCode += 5; }
+            position.x = (positionCode - 1) % 7;
+            position.y = Math.floor((positionCode - 1) / 7);
+            //показываем нужный флаг
+            $(".RegionHint .Flag").css('background-position',
+                    (-position.x * 22) + 'px ' + (-position.y * 15) + 'px');
+            //пишем название выбранного региона
+            if (regionsInfo[code] != 'undefined') {
+                $(".RegionHint .Name").html(regionsInfo[code].name);
+            } else {
+                $(".RegionHint .Name").html('');
+            }
+            //показываем подсказку (с флагом и номером региона)
+            $(".RegionHint").css('display','');
+            var checkNote = '';
+            //смотрим что мы умеем делать в этом регионе и говорим пользователю
+            if ($.inArray('payFine', regionsInfo[code].methods) != -1) {
+                //умеем оплачивать штрафы
+                checkNote = 'Вы сможете оплатить штрафы после проверки';
+            } else
+            if ($.inArray('getFines', regionsInfo[code].methods) != -1) {
+                //умеем проверять штрафы
+                checkNote = '';
+            } else
+            if ($.inArray('getFinesTest', regionsInfo[code].methods) != -1) {
+                //умеем проверять в тестовом режиме
+            }
+            else {
+                //ничего не умеем
+                isRegionOutOfService = true;
+            }
+            if ($.inArray('getFinesTest', regionsInfo[code].methods) != -1) {
+                checkNote = 'Проверка работает в тестовом режиме.<br/>Информация может быть не актуальной.'
+            }
+        } else {
+            //если незнакомый номер региона скрываем подсказку (с флагом и номером региона)
+            $(".RegionHint").css('display', 'none');
+            //и говорим об этом пользователю
+            isRegionOutOfService = true;
+        }
+        var notificationElement = $('#edit-notification');
+        if (isRegionOutOfService) {
+            //если мы не можем обслужить этот регион
+            checkNote = 'Вы получите уведомление о штрафах, когда подключение к базе ГИБДД в этом регионе будет доступно';
+            //прячем галочку "Я хочу получать уведомления", чтобы отметить ее по умолчанию
+            $('.Subscribe2').hide();
+            //запоминаем значение получения уведомлений
+            rememberChecked(notificationElement);
+            //ставим галочку насильно
+            notificationElement.attr('checked', 'checked')
+            //показываем поле для ввода емейла
+            $('.SubscribeEmail2').show();
+            //и устанавливаем читабельный текст
+            $('.SubscribeEmail2 .Caption').html('Электронная почта');
+            $('.SubscribeEmail2 .SubCaption').html('');
+        } else {
+            //если мы обслуживаем этот регион
+            //то нужно посмотреть разрешена ли подписка на емейл уведомления
+            //и в зависимости от этого показать галочку "Я хочу получать уведомления" или спрятать
+            if ($.inArray('subscribe', regionsInfo[code].methods) != -1) {
+                $('.Subscribe2').show();
+                //отмечаем галочку так, как она была отмечена до этого
+                recallChecked(notificationElement);
+                subscribeOnChange();
+                $('.SubscribeEmail2 .Caption').html('По электронной почте');
+                $('.SubscribeEmail2 .SubCaption').html('(Это бесплатно)');
+            } else {
+                //прячем галочку "Я хочу получать уведомления"
+                $('.Subscribe2').hide();
+                //запоминаем значение получения уведомлений
+                rememberChecked(notificationElement);
+                //убираем галочку насильно
+                notificationElement.removeAttr('checked');
+                //прячем поле для ввода емейла
+                $('.SubscribeEmail2').hide();
+            }
+        }
+        //показываем пользователю сообщение о том, что мы можем сделать в этом регионе
+        $('#CheckNote').html(checkNote);
+        //пишем номер регионе на изображении автономера
+        $(".AutoRegion").html(reg);
+        $("#edit-region").val(region);
+        showRequiredFields();
+        $(".ErrorToggle").hide();
+        resizeWindow();
+        return false;
+    }
+
+    function rememberChecked(el) {
+        if (el.attr('oldChecked') == undefined) {
+            el.attr('oldChecked', el.attr('checked'));
+        }
+    }
+
+    function recallChecked(el) {
+        if (el.attr('oldChecked') != undefined) {
+            if (el.attr('oldChecked') != 'false') {
+                el.attr('checked', 'checked');
+            } else {
+                el.removeAttr('checked');
+            }
+            el.removeAttr('oldChecked');
+        }
+    }
+
+    function pad(number, length) {
+        var str = '' + number;
+        while (str.length < length) {
+            str = '0' + str;
+        }
+        return str;
+    }
+</script>
+
+
 <div class="FineForm">
 <h2 >Проверка и оплата штрафов ГИБДД</h2>
 <!--p class="SpecialText" id="MotivationText">
