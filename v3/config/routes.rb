@@ -1,9 +1,6 @@
 EffectiveSales::Application.routes.draw do
 
 
-
-  get "wako/yako"
-  get "request_fine/getFine"
   #root
   root :to => redirect('/PAY/fine/index')
   
@@ -13,6 +10,7 @@ EffectiveSales::Application.routes.draw do
   scope ':hub_path' do
 
     get "fine/index"
+    get "request_fine/getFine"
 
     resources :hub_pages
     resources :hubs
