@@ -1,18 +1,19 @@
 EffectiveSales::Application.routes.draw do
 
-
-
-  get "wako/yako"
-  get "request_fine/getFine"
-  #root
   root :to => redirect('/PAY/fine/index')
   
   #auth
   devise_for :users
   
   scope ':hub_path' do
-
+    get "kontakts/index"
     get "fine/index"
+    get "request_fine/getFine"
+    get "koap/index"
+    get "strvozvrat/result"
+    get "strvozvrat/success"
+    get "strvozvrat/fail"
+    get "request_fine/getFine"
 
     resources :hub_pages
     resources :hubs
