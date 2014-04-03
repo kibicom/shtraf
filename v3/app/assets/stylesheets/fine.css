@@ -108,7 +108,7 @@
 				.AutoNumber2 .LicensePlate {
 					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -129px -101px transparent;
 				    height: 44px;
-				    padding: 0 0 0 7px;
+				    padding: 0 0 0 0px;
 				    width: 172px;
 				    z-index: 10;
 				}
@@ -118,6 +118,7 @@
 				    margin: 7px 0 0;
 				    padding: 0 2px;
 				    width: 90px;
+                    height: 22px;
 				}
 				.AutoNumber2 .RegionNumber.Text {
 					width: 42px;

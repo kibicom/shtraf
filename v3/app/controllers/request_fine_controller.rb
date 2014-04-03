@@ -20,8 +20,8 @@ class RequestFineController < ApplicationController
 
           if resp.code == '200'
             @json = JSON.parse(resp.body)
-          #else
-          #  need to throw some exception
+          else
+            redirect_to fine_index_path, alert: "Не удалось проверить штрафы!"
           end
     end
   end

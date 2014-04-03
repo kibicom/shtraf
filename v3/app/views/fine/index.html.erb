@@ -6,8 +6,9 @@
   <p class="CallToAction">Введите данные об автомобиле</p>
   <div class="Reset"></div>
 
+  <%= form_tag(request_fine_getFine_path, method: "get") do%>
   <table class="CheckFinesForm">
-    <%= form_tag(request_fine_getFine_path, method: "get") do%>
+
         <tbody><tr class="HintRow">
           <td></td><td></td>
           <td class="Hint" rowspan="9">
@@ -130,16 +131,13 @@
 
         </tr>
         <tr class="Check">
-          <td></td>
+        <td></td>
           <td>
             <div class="Paddings">
-              <div class="BlueButtonSized LargeFontSize" id="CheckFinesButton">
                 <%= submit_tag("Проверить штрафы",:class => 'btn btn-primary') %>
                 <% end %>
-              </div>
-    </div>
-
-    </td>
+            </div>
+        </td>
     </tr>
     </tbody>
   </table>
