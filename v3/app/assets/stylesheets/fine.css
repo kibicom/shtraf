@@ -47,20 +47,20 @@
 					display: block;
 				    width: 160px;
 				    height: 100px;
-					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -129px 0 transparent;
+					background: url(hints2.png) no-repeat scroll -129px 0 transparent;
 					margin-top: 25px;
 				}
 				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.RegistrationHint {
 					display: block;
 				    width: 128px;
 				    height: 180px;
-					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll 0 0 transparent;
+					background: url(hints2.png) no-repeat scroll 0 0 transparent;
 				}
 				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.RegistrationFullHint {
 					display: block;
 				    width: 128px;
 				    height: 180px;
-					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -308px 0 transparent;
+					background: url(hints2.png) no-repeat scroll -308px 0 transparent;
 				}
 				table.CheckFinesForm tr.HintRow td.Hint .HintPlace.SuperRegionHint {
 					display: block;
@@ -76,7 +76,7 @@
 					height: 68px;
 				}
 				table.CheckFinesForm tr.HintRow td.Hint .RegionHint .Flag {
-					background: url(/sites/all/themes/gibdd/images/region_flags_min.png) -22px -30px;
+					background: url(region_flags_min.png) -22px -30px;
 					width: 22px;
 					height: 15px;
 					border: 0;
@@ -106,9 +106,9 @@
 				    width: 45px
 				}
 				.AutoNumber2 .LicensePlate {
-					background: url("/sites/all/themes/gibdd/images/hints2.png?2") no-repeat scroll -129px -101px transparent;
+					background: url(hints2.png) no-repeat scroll -129px -101px transparent;
 				    height: 44px;
-				    padding: 0 0 0 0px;
+				    padding: 0 0 0 7px;
 				    width: 172px;
 				    z-index: 10;
 				}
@@ -174,7 +174,7 @@
     				width: 375px;
 				}
 				#MainContent .Error {
-    				background: url("/sites/all/themes/gibdd/images/error.png") no-repeat scroll 0 0 transparent;
+    				background: url(error.png) no-repeat scroll 0 0 transparent;
     				margin: 3px 0 4px;
     			}
 				.ui-autocomplete { position: absolute; cursor: default; }
@@ -207,7 +207,7 @@
 				}
 				.ui-menu .ui-menu-item a.ui-state-hover,
 				.ui-menu .ui-menu-item a.ui-state-active {
-					background: url("/sites/all/themes/gibdd/images/select_active_bg.gif") repeat-x scroll 0 0 transparent;
+					background: url(select_active_bg.gif) repeat-x scroll 0 0 transparent;
     				border-left: medium none #305D84;
     				border-right: medium none #305D84;
     				color: #FFFFFF;
