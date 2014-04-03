@@ -1,6 +1,5 @@
 EffectiveSales::Application.routes.draw do
 
-
   #root
   root :to => redirect('/PAY/fine/index')
   
@@ -11,7 +10,7 @@ EffectiveSales::Application.routes.draw do
 
     get "fine/index"
     get "request_fine/getFine"
-
+    get "koap/index"
     resources :hub_pages
     resources :hubs
     
