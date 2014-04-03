@@ -1,3 +1,10 @@
-Ваш платеж на сумму <%=@OutSum%> рублей принят.
-На счет <%=@InvId%>
+<p><h4>Ваш платеж на сумму <%=@OutSum%> рублей принят.</h4></p>
+<p><h4>На счет <%=@InvId%></h4></p>
+<%= form_tag(fine_index_path, method: "get") do%>
+    <p>Укажите ваш email или телефон для оповещения о новых штрафах!</p>
+    <%= text_field_tag(:Email,nil,placeholder: 'email') %>
+    <%= text_field_tag(:Phone,nil,placeholder: 'телефон') %>
+    <br> <%= submit_tag("Указать") %></br>
+    <%end%>
+
 <h2>Спасибо за покупку!</h2>
