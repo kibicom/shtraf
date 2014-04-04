@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122221844) do
+ActiveRecord::Schema.define(version: 20140404134132) do
 
   create_table "addresses", force: true do |t|
     t.string   "name"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20131122221844) do
     t.datetime "updated_at"
   end
 
+  create_table "autos", force: true do |t|
+    t.string   "nauto"
+    t.string   "reg_auto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "cities", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -45,7 +52,17 @@ ActiveRecord::Schema.define(version: 20131122221844) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
-    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "driver_license"
+  end
+
+  create_table "fines", force: true do |t|
+    t.string   "date"
+    t.string   "decree_number"
+    t.float    "sum"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,6 +85,13 @@ ActiveRecord::Schema.define(version: 20131122221844) do
   create_table "hubs", force: true do |t|
     t.string   "name"
     t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.float    "sum"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
