@@ -42,12 +42,13 @@
     <%= render "main_nav_bar", hubs: Hub.all %>
     
     <div class="container">
-      <div class="row">
+      <div class="row" style="width: 90%; margin: auto auto">
         <!-- menu span -->
+        <!--Рендерим только платежное меню-->
         <%= render "sections", hub_pages: Hub.pages(params[:hub_path])  %>
 
         <!-- content -->
-        <div class="span10">
+        <div class="span8">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
