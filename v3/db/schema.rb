@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140404134132) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"

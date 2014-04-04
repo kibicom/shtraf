@@ -1,1 +1,3 @@
-$("#payBtn").appendTo('<iframe width=\"168\" height=\"80\" style=\"border:0;width:168px;height:80px;overflow:hidden;background-color:transparent;\" allowTransparency=\"true\" src=\"https://auth.robokassa.ru:443/Merchant/PaymentForm/FormV.if?MrchLogin=demo&OutSum="+<%= params.sum %>+"&InvId=0&Desc=ROBOKASSA+Advanced+User+Guide&Shp_code=Asp&Shp_item=&SignatureValue=<%=  %>&Culture=ru&Encoding=utf-8\"></iframe>')
+$(function () {
+    $("#payBtn").replaceWith('<iframe width=\"168\" height=\"80\" style=\"border:0;width:168px;height:80px;overflow:hidden;background-color:transparent;\" allowTransparency=\"true\" src=\"https://auth.robokassa.ru:443/Merchant/PaymentForm/FormV.if?MrchLogin=demo&OutSum=<%= params[:sum] %>&InvId=0&Desc=ROBOKASSA+Advanced+User+Guide&Shp_code=Asp&Shp_item=&SignatureValue=<%= params[:seq] %>&Culture=ru&Encoding=utf-8\"></iframe>');
+});
