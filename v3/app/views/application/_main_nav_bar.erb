@@ -1,19 +1,19 @@
 <% unless Hub.where(path: params[:hub_path]).empty? %>
-  <div class="navbar navbar-fluid-top">
+  <div class="navbar navbar-top" style="width: 880px; margin: auto auto">
     <div class="navbar-inner">
-      <div class="container-fluid">
+      <div class="container">
         <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Kibicom</a>
-        <div class="container-fluid nav-collapse">
+        <a class="brand" href="#">Kibicorm</a>
+        <div class="container nav-collapse">
           <ul class="nav">
             <% hubs.each do |hub| %>
-              <li class="<%= 'active' if params[:hub_path] == hub.path %>">
-                <%= link_to hub.name, action: 'index', controller: hub.pages.first.path , hub_path:hub.path %>
-              </li>
+                <li class="<%= 'active' if params[:hub_path] == hub.path %>">
+                  <%= link_to hub.name, action: 'index', controller: hub.pages.first.path , hub_path:hub.path %>
+                </li>
             <% end %>
           </ul>
           <ul class='nav nav-collapse collapse pull-right'>

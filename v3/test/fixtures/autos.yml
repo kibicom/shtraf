@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nauto: MyString
+  reg_auto: MyString
+
+two:
+  nauto: MyString
+  reg_auto: MyString

@@ -1,28 +1,37 @@
 <div>
-<table class="table table-hover">
+<table class="table table-hover" style="width: 75%">
   <caption>Штрафы!</caption>
   <thead>
   <tr>
-    <th>ID</th>
-    <th>NAME</th>
-    <th>SUM</th>
+    <th style="width: 5%"></th>
+    <th style="width: 31%">Номер постановления</th>
+    <th style="width: 31%">Нарушение</th>
+    <th style="width: 31%">Сумма штрафа</th>
   </tr>
   </thead>
   <tbody>
   <%@json.each do |json|%>
       <tr class="fines">
-        <td><input type="checkbox" disabled="disabled"><%= json["id"] %></td>
-        <td><%= json["name"] %></td>
-        <td><%= json["sum"] %></td>
+        <td style="width: 5%"><div class="amPmCheckbox">
+          <input type="checkbox" disabled="disabled" name="data[Child][remember_me]" class="checkboxLabel main_street_input" id="am_2" value="1" />
+          <label for="am_2"></label>
+        </div></td>
+        <td style="width: 31%"><%= json["id"] %></td>
+        <td style="width: 31%"><%= json["name"] %></td>
+        <td style="width: 31%"><%= json["sum"] %></td>
       </tr>
   <%end%>
   </tbody>
   <tr>
     <td>Total:</td>
     <td id="total"></td>
-    <td id="PayBtn"></td>
   </tr>
 </table>
 
+<<<<<<< HEAD
+<div id="payBtn" style=" width: 75%; text-align: center"><h4>Выберите штрафы для оплаты.</h4></div></div>
+=======
 <div id="payBtn" style="text-align: center"><h4>Выберите штрафы для оплаты.</h4></div></div>
+>>>>>>> sdev
+
 

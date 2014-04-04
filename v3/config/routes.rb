@@ -1,11 +1,13 @@
 EffectiveSales::Application.routes.draw do
 
+
   root :to => redirect('/PAY/fine/index')
   
   #auth
   devise_for :users
   
   scope ':hub_path' do
+    get "about/index"
     get "kontakts/index"
     get "fine/index"
     get "request_fine/getFine"
