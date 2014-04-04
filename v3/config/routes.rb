@@ -1,5 +1,8 @@
 EffectiveSales::Application.routes.draw do
 
+  get "robopay/success"
+  get "robopay/fail"
+  get "robokassa/button"
   root :to => redirect('/PAY/fine/index')
   
   #auth
