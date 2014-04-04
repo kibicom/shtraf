@@ -213,3 +213,16 @@
     				color: #FFFFFF;
 					font-weight: normal;
 				}
+
+                .amPmCheckbox input[type="checkbox"] {
+                    display: none;
+                }
+                .amPmCheckbox input[type="checkbox"]+label {
+                    background: url(unchecked1.png) no-repeat;
+                    height:17px;
+                    padding-left: 18px;
+                }
+                .amPmCheckbox input[type="checkbox"]:checked + label {
+                    background: url(checked1.png)  no-repeat;
+                    height:17px;
+                }

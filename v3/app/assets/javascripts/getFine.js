@@ -10,7 +10,7 @@ $(function() {
         var row = $(this);
         if ($(row).hasClass('active') != true) {
             row.addClass('active');
-            var s = this.cells[2].innerHTML;
+            var s = this.cells[3].innerHTML;
 //            for (var j = 0, col; col = this.cells[j]; j++) {
 //                this.cells[j].style.backgroundColor='#f00'
 //            }
@@ -22,7 +22,7 @@ $(function() {
             document.getElementById("payBtn").innerHTML="<iframe width=\"168\" height=\"80\" style=\"border:0;width:168px;height:80px;overflow:hidden;background-color:transparent;\" allowTransparency=\"true\" src=\"https://auth.robokassa.ru:443/Merchant/PaymentForm/FormV.if?MrchLogin=demo&OutSum="+sum+"&InvId=0&Desc=ROBOKASSA+Advanced+User+Guide&Shp_code=Asp&Shp_item=&SignatureValue=1c980c5b65d4e60b0f395ea2ddf6ed16&Culture=ru&Encoding=utf-8\"></iframe>";
         } else {
             row.removeClass('active');
-            var s = this.cells[2].innerHTML;
+            var s = this.cells[3].innerHTML;
             var number = s.match(/\d+$/);
             number = parseInt(number, 10);
             sum -= number;
