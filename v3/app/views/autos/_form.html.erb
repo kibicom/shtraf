@@ -1,3 +1,18 @@
+<!--
+<%= simple_form_for(@auto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nauto %>
+    <%= f.input :reg_auto %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+-->
+
 
 <div class="FineForm" style="margin: auto auto">
   <h3 >Проверка и оплата штрафов ГИБДД</h3>
@@ -6,8 +21,9 @@
   <p class="CallToAction">Введите данные об автомобиле</p>
   <div class="Reset"></div>
 
-  <%= form_tag(request_fine_getFine_path, method: "get") do%>
-  <table class="CheckFinesForm">
+  <!--<%= form_tag(request_fine_getFine_path, method: "get") do%>-->
+  <%= simple_form_for(@auto) do |f| %>
+      <table class="CheckFinesForm">
 
         <tbody><tr class="HintRow">
           <td></td><td></td>
@@ -30,10 +46,18 @@
             <div class="Paddings">
               <div class="LicensePlate">
 
+                <!--
                 <input id="edit-auto-number" name="auto_number" type="text" class="Text Activable Hintable idleField" hintclass="SuperRegionHint" value="a123aa" default="a123aa">
 
 
                 <input id="edit-region" name="region" type="text" class="Text Activable RegionNumber Hintable ui-autocomplete-input" hintclass="SuperRegionHint" value="23" default="23" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+    `           -->
+
+                <div class="form-inputs">
+                  <%= f.input :nauto %>
+                  <%= f.input :rauto %>
+                </div>
+
 
 
               </div>
@@ -60,7 +84,12 @@
           <td class="FieldValue">
             <div class="Paddings">
 
+              <!--
               <input id="edit-driver-license" name="driver_license" type="text" class="Text Activable Hintable idleField" hintclass="DriverLicenseHint" value="12AA123456" default="12AA123456">
+              -->
+              <div class="form-inputs">
+                <%= f.input :customer[:driver_license] %>
+              </div>
               <div class="driver_license Value ErrorToggle" style="display: none;">
                 <div class="Error">Заполните поле корректно</div>
               </div>
@@ -103,13 +132,13 @@
           </td>
         </tr>
         <!--<tr class="Subscribe2">-->
-          <!--<td colspan="2">-->
-            <!--<div class="Paddings">-->
-              <!--<label for="edit-notification">-->
-                <!--<input id="edit-notification" name="notification" type="checkbox" onchange="subscribeOnChange()">-->
-                <!--Я хочу получать уведомления о новых штрафах							</label>-->
-            <!--</div>-->
-          <!--</td>-->
+        <!--<td colspan="2">-->
+        <!--<div class="Paddings">-->
+        <!--<label for="edit-notification">-->
+        <!--<input id="edit-notification" name="notification" type="checkbox" onchange="subscribeOnChange()">-->
+        <!--Я хочу получать уведомления о новых штрафах							</label>-->
+        <!--</div>-->
+        <!--</td>-->
         <!--</tr>-->
         <tr class="Subscribe2 SubscribeEmail2 ShowOnSubscribe email" style="display: none;">
           <td class="FieldName">
@@ -131,17 +160,21 @@
 
         </tr>
         <tr class="Check">
-        <td></td>
+          <td></td>
           <td>
             <div class="Paddings">
-                <%= submit_tag("Проверить штрафы",:class => 'btn btn-primary') %>
-                <%= link_to 'New Payment', new_payment_path %>
-                <% end %>
-            </div>
-        </td>
-    </tr>
-    </tbody>
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+
+  <% end %>
+  <% end %>
+  </div>
+  </td>
+  </tr>
+  </tbody>
   </table>
   <div id="CheckNote">Вы сможете оплатить штрафы после проверки</div>
 
 </div>
+

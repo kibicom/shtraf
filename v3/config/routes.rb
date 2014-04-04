@@ -1,11 +1,18 @@
 EffectiveSales::Application.routes.draw do
 
+
+
+  get "robopay/success"
+  get "robopay/fail"
+  get "robokassa/button"
+
   root :to => redirect('/PAY/fine/index')
   
   #auth
   devise_for :users
   
   scope ':hub_path' do
+    get "about/index"
     get "kontakts/index"
     get "fine/index"
     get "request_fine/getFine"
@@ -14,6 +21,10 @@ EffectiveSales::Application.routes.draw do
     get "strvozvrat/success"
     get "strvozvrat/fail"
     get "request_fine/getFine"
+
+    resources :autos
+
+    resources :payments
 
     resources :hub_pages
     resources :hubs

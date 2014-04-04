@@ -47,11 +47,11 @@
               z-index:-1;">
         <!-- menu span -->
         <div class="span2" style="margin: 0 0 0 0;background-color: #802b81;position: absolute;">
-          <%= render "sections", hub_pages: Hub.pages(params[:hub_path])  %>
+          <%= render "sections", hub_pages: Hub.pages("PAY") %>
+          <!--Рендерим только платежное меню-->
         </div><!--/span-->
       </div>
-      <div  style="height: 100%; width: 100%; background: #802b81; position:absolute;
-              z-index:-2;">
+      <div  style="height: 100%; width: 100%; background: #802b81; position:absolute;z-index:-2;">
         <!-- content -->
         <div class="span7" style="margin: 0 0 0 200px;background-color: #408140;position: absolute;">
           <%= bootstrap_flash %>

@@ -1,0 +1,44 @@
+<!--
+<h1>New payment</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', payments_path %>-->
+
+<div>
+  <table class="table table-hover" style="width: 75%">
+    <caption>Штрафы!</caption>
+    <thead>
+    <tr>
+      <th style="width: 5%"></th>
+      <th style="width: 31%">Номер постановления</th>
+      <th style="width: 31%">Нарушение</th>
+      <th style="width: 31%">Сумма штрафа</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%@json.each do |json|%>
+        <tr class="fines">
+          <td style="width: 5%"><div class="amPmCheckbox">
+            <input type="checkbox" disabled="disabled" name="data[Child][remember_me]" class="checkboxLabel main_street_input" id="am_2" value="1" />
+            <label for="am_2"></label>
+          </div></td>
+          <td style="width: 31%"><%= json["id"] %></td>
+          <td style="width: 31%"><%= json["name"] %></td>
+          <td style="width: 31%"><%= json["sum"] %></td>
+        </tr>
+    <%end%>
+    </tbody>
+    <tr>
+      <td>Total:</td>
+      <td id="total"></td>
+    </tr>
+  </table>
+
+  <div id="payBtn" style=" width: 75%; text-align: center"><h4>Выберите штрафы для оплаты.</h4></div></div>
+
+
+
+<%= link_to 'Оплата', {action: 'button', controller: 'robokassa'}, remote:true  %>
+
+
