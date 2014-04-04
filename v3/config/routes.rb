@@ -1,6 +1,7 @@
 EffectiveSales::Application.routes.draw do
 
 
+
   get "robopay/success"
   get "robopay/fail"
   get "robokassa/button"
@@ -20,6 +21,10 @@ EffectiveSales::Application.routes.draw do
     get "strvozvrat/success"
     get "strvozvrat/fail"
     get "request_fine/getFine"
+
+    resources :autos
+
+    resources :payments
 
     resources :hub_pages
     resources :hubs
