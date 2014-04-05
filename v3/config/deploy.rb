@@ -38,6 +38,10 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 set :ssh_options, { :forward_agent => true, :port => 9923 }
 
+set :rvm_ruby_version, '2.1.1'
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -55,10 +59,17 @@ namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+       within release_path do
+         execute :rake, 'cache:clear'
+       end
     end
   end
 
 end
+
+
+#namespace :db do
+#  task :copy_configuration do
+#    run "cp #{release_path}/config/database.yml #{release_path}/config/database.yml"
+#  end
+#end
