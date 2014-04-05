@@ -37,33 +37,47 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-    
-    <div class="container" style="width: 880px;min-height: 100%;
-            height: auto !important; margin: auto auto;position:relative;">
+    <div class="container" id="wrap">
+
+
       <!--top bar-->
       <%= render "main_nav_bar", hubs: Hub.all %>
-      <div class="row" style="margin: 0 0 0 0">
-      <div  style="height: 100%; width: 20%; background: #baff3b; position:absolute;
-              z-index:-1;">
+
+      <div id="container">
+        <div id="main_body">
+          <div class="space"></div>
+        </div>
+      </div>
+
+
+      <div class="row" id="main" style="margin: 0 0 0 0;">
+
+
         <!-- menu span -->
-        <div class="span2" style="margin: 0 0 0 0;background-color: #802b81;position: absolute;">
+        <div class="span2" style="width:170px;margin: 0 0 0 0;background-color: #802b81;position: fixed">
           <%= render "sections", hub_pages: Hub.pages("PAY") %>
           <!--Рендерим только платежное меню-->
         </div><!--/span-->
-      </div>
-      <div  style="height: 100%; width: 100%; background: #802b81; position:absolute;z-index:-2;">
+
+
+
         <!-- content -->
-        <div class="span7" style="margin: 0 0 0 200px;background-color: #408140;position: absolute;">
+        <div class="span7" style="width:710px;margin: 0 0 0 170px;background-color: #408140;position: fixed">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-      </div>
-      </div><!--/row-->
-      <footer style="position:absolute;bottom:0;width:100%;height:20px;   /* Height of the footer */background:#6cf;">
-        <p>&copy; Effective Sales 2013</p>
-      </footer>
 
+
+      </div><!--/row-->
+
+      </div>
+    <div id="footer">
+      <p>&copy; Effective Sales 2013</p>
+    </div>
     </div> <!-- /container -->
+
+
+
 
   </body>
 </html>
