@@ -50,11 +50,11 @@
       </div>
 
 
-      <div class="row" id="main" style="margin: 0 0 0 0;">
+      <!--<div class="row" id="main" style="margin: 0 0 0 0;">-->
 
 
         <!-- menu span -->
-        <div class="span2" style="width:170px;margin: 0 0 0 0;background-color: #802b81;position: fixed">
+        <div style="width:170px;margin: 0 0 0 0;background-color: #802b81;float:left">
           <%= render "sections", hub_pages: Hub.pages("PAY") %>
           <!--Рендерим только платежное меню-->
         </div><!--/span-->
@@ -62,21 +62,22 @@
 
 
         <!-- content -->
-        <div class="span7" style="width:710px;margin: 0 0 0 170px;background-color: #408140;position: fixed">
+        <div style="width:710px;margin: 0 0 0 0px;background-color: #408140;float:right">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
 
 
-      </div><!--/row-->
+      <!--</div>-->
+    <!--/row-->
 
       </div>
+
+    </div> <!-- /container -->
+
     <div id="footer">
       <p>&copy; Effective Sales 2013</p>
     </div>
-    </div> <!-- /container -->
-
-
 
 
   </body>

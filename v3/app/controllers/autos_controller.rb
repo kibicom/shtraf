@@ -1,10 +1,10 @@
 class AutosController < ApplicationController
-  before_action :set_auto, only: [:show, :edit, :update, :destroy]
+   before_action :set_auto, only: [:show, :edit, :update, :destroy]
 
   # GET /autos
   # GET /autos.json
   def index
-    @autos = Auto.all
+    #@auto = Auto.new
   end
 
   # GET /autos/1
@@ -24,17 +24,17 @@ class AutosController < ApplicationController
   # POST /autos
   # POST /autos.json
   def create
-    @auto = Auto.new(auto_params)
+        @auto = Auto.new(auto_params)
 
-    respond_to do |format|
-      if @auto.save
-        format.html { redirect_to @auto, notice: 'Auto was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @auto }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @auto.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @auto.save
+          format.html { redirect_to @auto, notice: 'Auto was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @auto }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @auto.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /autos/1
@@ -64,7 +64,7 @@ class AutosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_auto
-      @auto = Auto.find(params[:id])
+      #@auto = Auto.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

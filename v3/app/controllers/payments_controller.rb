@@ -14,7 +14,15 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
-    @payment = Payment.new
+    Net::HTTP.start("dev.kibicom.com") do |http|
+      resp = http.get("/test.json")
+
+      if resp.code == '200'
+        @json = JSON.parse(resp.body)
+      else
+        redirect_to fine_index_path, alert: "Не удалось проверить штрафы!"
+      end
+    end
   end
 
   # GET /payments/1/edit

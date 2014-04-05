@@ -6,7 +6,7 @@ EffectiveSales::Application.routes.draw do
   get "robopay/fail"
   get "robokassa/button"
 
-  root :to => redirect('/PAY/fine/index')
+  root :to => redirect('/PAY/autos')
   
   #auth
   devise_for :users
